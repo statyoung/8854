@@ -1,0 +1,30 @@
+# dynamics param
+# L                : 0.54  # displacement from wheelchair to robot
+# max_vel          : 0.3
+# max_acc          : 1.5  # meter/sec_square
+# max_ang_vel      : 30 # degree/sec
+# max_ang_acc      : 100  # degree/sec_square
+
+# MPC param
+# mpc_dt           : 0.05
+# pred_hrzn        : 40
+
+# vehicle dimensions (meter)
+a                : 1  # length of robot / 2
+b                : 2  # width of robot / 2
+# trailer_width    : 0.1
+# wheel_dia        : 0.0635
+# wheeltowheel     : 0.7
+# chair_wheel_width: 0.1
+# chair_wheel_dia  : 0.5
+trailer_a        : 3
+trailer_b        : 1.75
+# marker_size      : 0.2
+
+# simulation params
+# dt               : 0.01  # sec
+rend_size        : 400  # pixel
+# focusing_speed   : 1.0
+render           : True
+env_size         : 50  # meter, size of environment at [rend_size * rend_size] window
+
