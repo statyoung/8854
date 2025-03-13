@@ -2,6 +2,7 @@
 # Explainable AI: GAM-Based Transparent Models & Post-hoc Methods
 
 Overview
-This repository contains implementations of GAM-based transparent models such as NAM (Neural Additive Models), NBM (Neural Basis Models), and EBM (Explainable Boosting Machine), along with post-hoc explanation techniques like LIME (Local Interpretable Model-agnostic Explanations) and SHAP (SHapley Additive Explanations).
 
-The project explores the application of these models to various datasets, providing comparative experiments, visualizations, and interpretability analysis to demonstrate their effectiveness in Explainable AI (XAI).
+This repository contains implementations of GAM-based transparent models, including Neural Additive Models (NAM) and Neural Basis Models (NBM). These models have been applied to various financial (e.g., Loan Default Prediction) and non financial datasets, demonstrating their effectiveness through performance evaluations and visualization plots.
+
+Additionally, this project explores post-hoc explanation methods, such as SHAP (SHapley Additive Explanations) and LIME (Local Interpretable Model-agnostic Explanations). Simple sentiment classification experiments were conducted to illustrate their functionality, while further analysis was performed on tabular datasets to assess their sensitivity to noise. Through systematic experimentation, this repository provides insights into how SHAP and LIME react to perturbations in input data.
