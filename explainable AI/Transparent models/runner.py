@@ -47,7 +47,7 @@ if __name__ == '__main__':
     device = torch.device(f'cuda:{args.gpu}') if (torch.cuda.is_available() & (args.gpu != 'cpu')) else torch.device('cpu')
     output_dir = f'{args.model}/output'
     
-    # 컬럼 이름 정의
+   
     column_names = [
     "longitude", "latitude", "housingMedianAge", "totalRooms",
     "totalBedrooms", "population", "households", "medianIncome",
@@ -55,7 +55,7 @@ if __name__ == '__main__':
     ]
     data = pd.read_csv("cal_housing.data", header=None, names=column_names)
     data['medianHouseValue'] = data['medianHouseValue'] / 100000
-    X = data.drop(columns=['medianHouseValue'])  # "Rings"이 종속 변수
+    X = data.drop(columns=['medianHouseValue'])  
     y = data['medianHouseValue']
     
     scaler = MinMaxScaler()
