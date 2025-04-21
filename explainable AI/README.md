@@ -28,4 +28,4 @@ Moreover, the graphs allow us to identify regions where prediction values change
 By leveraging this information, additional cut-off thresholds can be defined to enhance the precision of existing evaluation or screening criteria.
 
 
-![Feature contribution plots](../plot/graph.png)
+![Feature contribution plots](../plot/graph.jpg)
