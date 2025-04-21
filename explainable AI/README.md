@@ -1,7 +1,7 @@
 
 # Explainable AI: GAM-Based Transparent Models & Post-hoc Methods
 
-Description
+##Description
 
 As machine learning is increasingly applied to critical domains like finance and healthcare, the demand for models that not only perform well but also provide clear and trustworthy explanations has become essential. In high-stakes environments, black-box models pose challenges in terms of accountability, regulatory compliance, and user trust.
 
