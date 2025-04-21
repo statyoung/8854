@@ -50,7 +50,6 @@ class NBM(nn.Module):
         self.nary_indices = {}
         
         if self.interaction_indices is not None:
-            # 주어진 interaction_indices를 사용하여 nary_indices를 생성합니다.
             indices_by_order = defaultdict(list)
             for idx_tuple in self.interaction_indices:
                 order = len(idx_tuple)
