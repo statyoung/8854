@@ -13,4 +13,4 @@ Test-set performance (mean ± std). For regression tasks (Abalone, CA Housing, W
 For classification tasks (Credit, Churn, Telescope), higher is better (AUROC). 
 Bold numbers indicate the best result in each column.
 
-![Performance Plot](plot/insuarance.png)
+![Performance Plot](../plot/insurance.png)
