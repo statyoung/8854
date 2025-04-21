@@ -9,8 +9,6 @@ Additionally, this project explores post-hoc explanation methods, such as SHAP (
 
 ## Model Performance Comparison
 
-Test-set performance (mean ± std). For regression tasks (Abalone, CA Housing, Wine), lower is better (RMSE). 
-For classification tasks (Credit, Churn, Telescope), higher is better (AUROC). 
-Bold numbers indicate the best result in each column.
+Test-set performance (mean ± std). This table summarizes the AUROC scores of various interpretable and black-box models across five binary classification tasks. Among them, three tasks involve insurance claim prediction (Omdema, Car, Allstate), one task is for fraud detection (Fraud), and one task for customer churn prediction (Churn). Higher is better, and bold values indicate the best performance per dataset.
 
 ![Performance Plot](../plot/insurance.png)
