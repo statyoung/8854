@@ -18,3 +18,14 @@ Through systematic comparison and visualization, this project contributes to the
 Test-set performance (mean ± std). This table summarizes the AUROC scores of various interpretable and black-box models across five binary classification tasks. Among them, three tasks involve insurance claim prediction (Omdema, Car, Allstate), one task is for fraud detection (Fraud), and one task for customer churn prediction (Churn). Higher is better, and bold values indicate the best performance per dataset.
 
 ![Performance Plot](../plot/insurance.png)
+
+# Feature Contribution Visualization
+
+GAM-based models (such as NAM, NBM, and EBM) estimate the effect of each variable independently, allowing for clear visualization of individual feature contributions.
+These visualizations not only help explain model predictions intuitively but also enable quantification of risk factors.
+
+Moreover, the graphs allow us to identify regions where prediction values change abruptly, which can be designated as high-risk zones.
+By leveraging this information, additional cut-off thresholds can be defined to enhance the precision of existing evaluation or screening criteria.
+
+
+![Feature contribution plots](../plot/graph.png)
