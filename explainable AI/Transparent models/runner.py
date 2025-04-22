@@ -66,6 +66,7 @@ if __name__ == '__main__':
     X_processed = pd.concat([scaled_numerical, encoded_categorical_df], axis=1)
     
     X_train, X_test, y_train, y_test = train_test_split(X_processed, y, test_size=0.2, random_state=args.seed)
+    
     if args.model == 'nam':
         model = NAMRegressor(
             num_epochs=1000,
