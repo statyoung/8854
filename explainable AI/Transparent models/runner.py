@@ -43,27 +43,29 @@ if __name__ == '__main__':
     for key, value in vars(args).items():
         print(f'\t [{key}]: {value}')
     
-    # device 및 저장경로 정의
     device = torch.device(f'cuda:{args.gpu}') if (torch.cuda.is_available() & (args.gpu != 'cpu')) else torch.device('cpu')
     output_dir = f'{args.model}/output'
     
-   
-    column_names = [
-    "longitude", "latitude", "housingMedianAge", "totalRooms",
-    "totalBedrooms", "population", "households", "medianIncome",
-    "medianHouseValue"
-    ]
-    data = pd.read_csv("cal_housing.data", header=None, names=column_names)
-    data['medianHouseValue'] = data['medianHouseValue'] / 100000
-    X = data.drop(columns=['medianHouseValue'])  
-    y = data['medianHouseValue']
-    
+    file_path = "churn.csv"  # 파일 경로
+    data = pd.read_csv(file_path)
+
+    y = data["Churn"]  # Target 변수
+    features = data.drop(columns=["Churn"])  # 나머지 Feature
+
+    categorical_features = ["Complains", "Tariff Plan", "Status"]
+    numerical_features = features.drop(columns=categorical_features).columns  # 나머지는 연속형 변수
+
+    encoder = OneHotEncoder(drop=None, sparse_output=False)  # drop=None은 모든 범주를 인코딩
+    encoded_categorical = encoder.fit_transform(features[categorical_features])
+
+    encoded_categorical_df = pd.DataFrame(encoded_categorical, columns=encoder.get_feature_names_out(categorical_features))
+
     scaler = MinMaxScaler()
-    X_scaled = scaler.fit_transform(X)
-    X_processed = pd.DataFrame(X_scaled, columns=X.columns)
+    scaled_numerical = pd.DataFrame(scaler.fit_transform(features[numerical_features]), columns=numerical_features)
+
+    X_processed = pd.concat([scaled_numerical, encoded_categorical_df], axis=1)
     
     X_train, X_test, y_train, y_test = train_test_split(X_processed, y, test_size=0.2, random_state=args.seed)
-    
     if args.model == 'nam':
         model = NAMRegressor(
             num_epochs=1000,
